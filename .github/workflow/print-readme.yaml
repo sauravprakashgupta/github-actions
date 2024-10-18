@@ -1,0 +1,17 @@
+name: Print Readme Contents
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Python script
+        run: |
+          python bin/print_readme.py
